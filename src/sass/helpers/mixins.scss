@@ -1,0 +1,23 @@
+@mixin font-settings($size, $weight: '400', $height: '1.2') {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $height;    
+  }
+  
+@mixin center-flex($type: 'all') {
+    display: flex;
+  
+    @if $type== 'all' {
+      justify-content: center;
+      align-items: center;
+    } @else if $type== 'hor' {
+      justify-content: center;
+    } @else if $type== 'ver' {
+      align-items: center;
+    }
+  }
+  
+@mixin width-height($width, $height) {
+    width: $width;
+    height: $height;
+}

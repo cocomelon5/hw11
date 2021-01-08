@@ -1,0 +1,136 @@
+.team {
+
+  &__text {
+    @include font-settings(15px, 400, 1.6);
+    font-family: $secondary-font-stack;
+    color: $secondary-dark-color;
+    margin-bottom: 90px;
+    text-align: center;
+    padding: 0 130px;
+  }
+
+  &__list {
+    @extend %list;
+    justify-content: space-between;
+  }
+
+  &__item {
+    flex: 0 0 380px;
+
+    &:hover .item-team__overlay::before,
+    &:focus .item-team__overlay::before {
+      opacity: 1;
+    }
+
+    &__overlay {
+        position: relative;
+        top: 0;
+        left: 0;
+        transition: 0.2s linear;
+    }
+
+    &:hover .item-team__overlay,
+    &:focus .item-team__overlay {
+        top: -10px;
+        left: -10px;
+    }
+  }
+}
+
+.item-team {
+    &__cont {
+    margin-bottom: 30px;
+    background-color: $green-icon-color;
+    position: relative;
+    }
+
+    &__overlay::before {
+        content: "";
+        position: absolute;
+        @include width-height(100%, 100%);
+        background: linear-gradient(
+          90deg,
+          rgb(252, 227, 138) 0%,
+          rgb(243, 129, 129) 100%
+        );
+        opacity: 0;
+        transition: 0.2s linear;
+    }
+}
+
+.team__item:hover .social-list,
+.team__item:focus .social-list {
+  opacity: 1;
+}
+
+.social-list {
+    @extend %list;
+    flex-wrap: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    transition: 0.2s;
+    opacity: 0;
+
+    &__item {
+        @include width-height(56px, 56px);
+        background-color: $primary-accent-color;
+
+        &:hover {
+            background-color: $red-icon-color;
+            transition: 0.2s;
+        }
+
+        &:hover .social-list__svg {
+            fill: $primary-white-color;
+            transition: 0.2s;
+          }
+
+        &:not(:last-child) {
+            margin-right: 1px;
+        }
+    }
+
+    &__link {
+        height: 100%;
+        @include center-flex('all');
+    }
+
+    &__svg {
+        fill: $red-icon-color;
+
+        &--facebook {
+            @include width-height(13px, 26px);
+        }
+        &--twitter {
+            @include width-height(26px, 22px);
+        }
+        &--pinterest {
+            @include width-height(21px, 26px);
+        }
+        &--instagram {
+            @include width-height(26px, 26px);
+        }
+    }
+}
+
+.figcaption-team {
+    text-align: center;
+
+    &__title {
+        @include font-settings(14px, 700, 1.2);
+        font-family: $main-font-stack;
+        color: $primary-dark-color;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    &__text {
+        @include font-settings(15px, 400, 1.6);
+        font-family: $secondary-font-stack;
+        color: $secondary-dark-color;
+        font-style: italic;
+    }
+}

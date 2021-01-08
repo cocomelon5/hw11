@@ -1,0 +1,99 @@
+.header {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+}
+
+.header__container {
+  @include center-flex('ver');
+  justify-content: space-between;
+}
+
+.logo__link {
+  @include font-settings(30px, 700, 1.2);
+  color: $primary-white-color;
+  font-family: $main-font-stack;
+}
+
+// -----NAVIGATION-----
+
+.header__navigation {
+  display: flex;
+}
+
+.site-navigation__list {
+  display: flex;
+}
+
+.site-navigation__item {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-right: 60px;
+  }
+  &::after {
+    @include width-height(100%, 3px);
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color:$primary-accent-color;
+    opacity: 0;
+    transition: 0.2s linear;
+  }
+  &:hover::after,
+  &:focus::after {
+  opacity: 1;
+  bottom: -10px;
+  }
+}
+
+.site-navigation__link {
+    color: $primary-white-color;
+    text-transform: uppercase;
+    font-family: $main-font-stack;
+    @include font-settings(14px, 400, 1.2);
+    
+    &:hover,
+    &:focus {
+      color: $primary-accent-color;
+      transition: 0.2s;
+    }
+
+}
+
+// ------ICON-----
+
+.site-navigation__cont-svg {
+    display: flex;
+    padding-left: 40px;
+  }
+  
+  .cont-svg__link {
+    margin-right: 40px;
+  }
+  
+  .cont-svg__svg--icon-cart {
+    @include width-height(18px, 15px);
+  }
+  
+  .cont-svg__button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .cont-svg__svg--icon-search {
+    @include width-height(18px, 18px);
+  }
+  
+  .cont-svg__svg {
+    fill: $primary-white-color;
+  }
+  
+  .cont-svg__link:hover .cont-svg__svg,
+  .cont-svg__button:hover .cont-svg__svg {
+    fill: $primary-accent-color;
+    transition: 0.2s;
+  }

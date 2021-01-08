@@ -1,0 +1,28 @@
+%list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  %title-up {
+    display: block;
+    font-family: $main-cursive-font;
+    font-weight: 400;
+  }
+
+  %title-down {
+    display: block;
+    font-family: $main-font-stack;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  %button {
+    text-transform: uppercase;
+    color: $primary-white-color;
+    cursor: pointer;
+    font-family: $main-font-stack;
+    font-weight: 700;
+  }

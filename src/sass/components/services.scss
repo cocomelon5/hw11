@@ -1,0 +1,82 @@
+.section__title {
+    color: $primary-dark-color;
+    text-align: center;
+    position: relative;
+    margin-bottom: 100px;
+
+    &-up {
+        @extend %title-up;
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+    
+    &-down {
+        @extend %title-down;
+        font-size: 30px;
+        line-height: $main-text-height;
+    }
+    
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -40px;
+        @include width-height(60px, 3px);
+        background-color: $red-icon-color;
+    }
+}
+
+.services__list {
+    @extend %list;
+    justify-content: space-around;
+}
+
+
+.services__item {
+    display: flex;
+    flex: 0 0 380px;
+
+    &:not(:nth-last-child(-n + 3)) {
+        margin-bottom: 100px;
+    }
+}
+  
+.services__svg {
+    fill: $green-icon-color;
+    margin: 0 24px;
+    flex-shrink: 0;
+
+    &--icon-alarm {
+        @include width-height(32px, 31px);
+    }
+    &--icon-line {
+        @include width-height(32px, 32px);
+    }
+    &--icon-computer {
+        @include width-height(32px, 28px);
+    }
+    &--icon-book {
+        @include width-height(32px, 32px);
+    }
+    &--icon-home {
+        @include width-height(32px, 31px);
+    }
+    &--icon-image {
+        @include width-height(32px, 32px);
+    }
+}
+
+.cont-services__title {
+    margin-bottom: 20px;
+    font-family: $main-font-stack;
+    color: $primary-dark-color;
+    text-transform: uppercase;
+    @include font-settings(14px, 700, 1.2)
+}
+  
+.cont-services__text {
+    font-family: $secondary-font-stack;
+    color: $secondary-dark-color;
+    @include font-settings(15px, 400, 1.6);
+  }
